@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Trabajaya</string>
+    <string name="act_1">Login</string>
+    <string name="act_2">Crear cuenta</string>
+    <string name="act_3">Mi cuenta</string>
+    <string name="title_activity_formato">Formato</string>
+    <string name="title_home">Experiencia</string>
+    <string name="title_dashboard">Perfil</string>
+    <string name="title_notifications">Buscar empleo</string>
+    <string name="title_activity_ingreso">Ingreso</string>
+</resources>

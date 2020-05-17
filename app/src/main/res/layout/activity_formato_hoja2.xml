@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mi_cuenta"
+    tools:context=".FormatoHoja">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/Text1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Tu información personal"
+                android:textColor="@android:color/background_dark"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:typeface="serif"
+                app:fontFamily="monospace" />
+
+            <TextView
+                android:id="@+id/Text2"
+                android:layout_width="286dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:text="Nombre"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/edit1"
+                style="@android:style/Widget.EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/style_borde"
+                android:ems="10"
+                android:maxLength="14"
+                android:inputType="textPersonName"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/Text3"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Primer apellido"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/edit2"
+                style="@android:style/Widget.DeviceDefault.Light.EditText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/style_borde"
+                android:ems="10"
+                android:maxLength="14"
+                android:inputType="textPersonName"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/Text4"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Segundo apellido"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/edit3"
+                style="@android:style/Widget.DeviceDefault.Light.AutoCompleteTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/style_borde"
+                android:ems="10"
+                android:maxLength="14"
+                android:inputType="textPersonName"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/Text6"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Número cédula"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/edit4"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/style_borde"
+                android:ems="10"
+                android:maxLength="14"
+                android:inputType="numberSigned"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/Text7"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Carrera Profesional"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/edit5"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/style_borde"
+                android:ems="10"
+                android:maxLength="30"
+                android:inputType="textPersonName"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/Text8"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Semestre"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/edit6"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/style_borde"
+                android:ems="10"
+                android:maxLength="14"
+                android:inputType="textPersonName"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/Text9"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Número de celular"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/edit7"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/style_borde"
+                android:ems="10"
+                android:maxLength="12"
+                android:inputType="number"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/style_borde"
+                android:onClick="guardar"
+                android:text="Guardar"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
