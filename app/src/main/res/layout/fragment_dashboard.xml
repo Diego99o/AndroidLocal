@@ -182,7 +182,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/style_borde"
-                android:text="Guardar"
+                android:text="Modificar"
                 android:textSize="24sp" />
 
             <Space

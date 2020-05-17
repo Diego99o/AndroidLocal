@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.hoja.ui.dashboard.DashboardFragment;
+
 public class FormatoHoja extends AppCompatActivity {
     EditText et_nombre,et_papellido,et_sapellido,et_cedula,et_carrera,et_semestre,et_celular;
     private Cursor fila;
@@ -61,8 +63,11 @@ public class FormatoHoja extends AppCompatActivity {
             et_carrera.setText("");
             et_semestre.setText("");
             et_celular.setText("");
-            Intent z = new Intent(this,Ingreso.class);
-//            z.putExtras(xx);
+            Bundle xx = new Bundle();
+            xx.putString("usuario", idUsuario);
+            Toast.makeText(this, "Id usuario" + idUsuario, Toast.LENGTH_LONG).show();
+            Intent z = new Intent(this, Ingreso.class);
+            z.putExtras(xx);
             startActivity(z);
 
 

@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.hoja.ui.dashboard.DashboardFragment;
+
 public class MainActivity extends AppCompatActivity {
 
     private EditText et_ucc,et_pass;
@@ -52,7 +54,10 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(f);
                     }
                     else{
-                        Intent i = new Intent(this,Ingreso.class);
+                        Bundle d = new Bundle();
+                        d.putString("usuario", idUsuario);
+                        Intent i = new Intent(this, Ingreso.class);
+                        i.putExtras(d);
                         startActivity(i);
                     }
                 }

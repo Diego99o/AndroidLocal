@@ -1,5 +1,6 @@
 package com.example.hoja.ui.dashboard;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -54,7 +55,6 @@ public class DashboardFragment extends Fragment {
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper( getActivity(), "administrador", null, 1);
         SQLiteDatabase Basededatos = admin.getWritableDatabase();
         String idusuario = bb.getString("usuario");
-        String cedula = bb.getString("cedula");
 
         if (!idusuario.isEmpty()){
             Cursor fila = Basededatos.rawQuery("select nombre, papellido, sapellido, cedula, carrera, semestre,celular from personal where idusuario="+idusuario,null);
@@ -77,6 +77,31 @@ public class DashboardFragment extends Fragment {
             Toast.makeText(getContext(), "No existe informacion", Toast.LENGTH_LONG).show();
 
         }
+    }
+    public void modificar(){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper( getActivity(), "administrador", null, 1);
+        SQLiteDatabase Basededatos = admin.getWritableDatabase();
+        String idusuario = bb.getString("usuario");
+//        String nombre = nombre.;
+        //String descripcion = et_descipcion.getText().toString();
+        /*if (!codigo.isEmpty() && !descripcion.isEmpty() && !precio.isEmpty()){
+            ContentValues registro = new ContentValues();
+            registro.put("codigo", codigo);
+            registro.put("descripcion", descripcion);
+            registro.put("precio", precio);
+
+            int cantidad = Basededatos.update("articulos",registro,"codigo="+codigo,null);
+            Basededatos.close();
+            if (cantidad==1){
+                Toast.makeText(this, "Articulo modificado correctamente", Toast.LENGTH_LONG).show();
+            }
+            else{
+                Toast.makeText(this, "El articulo no existe", Toast.LENGTH_LONG).show();
+            }
+
+        }else{
+            Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_LONG).show();
+        }*/
     }
 
 }
