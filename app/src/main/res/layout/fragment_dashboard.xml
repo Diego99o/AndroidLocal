@@ -39,9 +39,8 @@
                 android:text="Nombre"
                 android:textSize="24sp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/edit1"
-                style="@android:style/Widget.EditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -50,7 +49,6 @@
                 android:ems="10"
                 android:inputType="textPersonName"
                 android:maxLength="14"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 android:textSize="24sp" />
 
             <TextView
@@ -61,9 +59,8 @@
                 android:text="Primer apellido"
                 android:textSize="24sp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/edit2"
-                style="@android:style/Widget.DeviceDefault.Light.EditText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -82,9 +79,8 @@
                 android:text="Segundo apellido"
                 android:textSize="24sp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/edit3"
-                style="@android:style/Widget.DeviceDefault.Light.AutoCompleteTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -100,10 +96,10 @@
                 android:layout_width="286dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Número cédula"
+                android:text="Estado civil"
                 android:textSize="24sp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/edit4"
                 android:layout_width="286dp"
                 android:layout_height="wrap_content"
@@ -111,7 +107,7 @@
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/style_borde"
                 android:ems="10"
-                android:inputType="numberSigned"
+                android:inputType="textPersonName"
                 android:maxLength="14"
                 android:textSize="24sp" />
 
@@ -120,10 +116,10 @@
                 android:layout_width="286dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Carrera Profesional"
+                android:text="Ciudad de residencia"
                 android:textSize="24sp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/edit5"
                 android:layout_width="286dp"
                 android:layout_height="wrap_content"
@@ -140,11 +136,30 @@
                 android:layout_width="286dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Semestre"
+                android:text="Dirección de residencia"
                 android:textSize="24sp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/edit6"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/style_borde"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:maxLength="14"
+                android:textSize="24sp" />
+            <TextView
+                android:id="@+id/Text19"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Ciudad de nacimiento"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/edit19"
                 android:layout_width="286dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -160,10 +175,10 @@
                 android:layout_width="286dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Número de celular"
+                android:text="Número de contacto"
                 android:textSize="24sp" />
 
-            <EditText
+            <TextView
                 android:id="@+id/edit7"
                 android:layout_width="286dp"
                 android:layout_height="wrap_content"
@@ -173,16 +188,6 @@
                 android:ems="10"
                 android:inputType="number"
                 android:maxLength="12"
-                android:textSize="24sp" />
-
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="286dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/style_borde"
-                android:text="Modificar"
                 android:textSize="24sp" />
 
             <Space

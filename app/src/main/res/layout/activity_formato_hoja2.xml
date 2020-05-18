@@ -97,7 +97,7 @@
                 android:layout_width="286dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Número cédula"
+                android:text="Estado civil"
                 android:textSize="24sp" />
 
             <EditText
@@ -109,7 +109,7 @@
                 android:background="@drawable/style_borde"
                 android:ems="10"
                 android:maxLength="14"
-                android:inputType="numberSigned"
+                android:inputType="textPersonName"
                 android:textSize="24sp" />
 
             <TextView
@@ -117,7 +117,7 @@
                 android:layout_width="286dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Carrera Profesional"
+                android:text="Ciudad de residencia"
                 android:textSize="24sp" />
 
             <EditText
@@ -137,11 +137,30 @@
                 android:layout_width="286dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Semestre"
+                android:text="Dirección de residencia"
                 android:textSize="24sp" />
 
             <EditText
                 android:id="@+id/edit6"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/style_borde"
+                android:ems="10"
+                android:maxLength="14"
+                android:inputType="textPersonName"
+                android:textSize="24sp" />
+            <TextView
+                android:id="@+id/Text19"
+                android:layout_width="286dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Ciudad de nacimiento"
+                android:textSize="24sp" />
+
+            <EditText
+                android:id="@+id/edit19"
                 android:layout_width="286dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -157,7 +176,7 @@
                 android:layout_width="286dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="Número de celular"
+                android:text="Número de contacto"
                 android:textSize="24sp" />
 
             <EditText

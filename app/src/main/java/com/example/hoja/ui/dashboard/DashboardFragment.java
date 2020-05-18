@@ -1,10 +1,14 @@
 package com.example.hoja.ui.dashboard;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -18,10 +22,11 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.hoja.AdminSQLiteOpenHelper;
+import com.example.hoja.MainActivity;
 import com.example.hoja.R;
 
 public class DashboardFragment extends Fragment {
-    EditText nombre,apellido1,apellido2, numcedula,carrera,semestre,numcelular;
+    TextView nombre,apellido1,apellido2, estado,ciudad,direcion,nacimiento,numcelular;
     Bundle bb;
     private DashboardViewModel dashboardViewModel;
 
@@ -33,11 +38,13 @@ public class DashboardFragment extends Fragment {
         nombre = root.findViewById(R.id.edit1);
         apellido1 = root.findViewById(R.id.edit2);
         apellido2 =root.findViewById(R.id.edit3);
-        numcedula =root.findViewById(R.id.edit4);
-        carrera =root.findViewById(R.id.edit5);
-        semestre =root.findViewById(R.id.edit6);
+        estado =root.findViewById(R.id.edit4);
+        ciudad =root.findViewById(R.id.edit5);
+        direcion =root.findViewById(R.id.edit6);
+        nacimiento =root.findViewById(R.id.edit19);
         numcelular =root.findViewById(R.id.edit7);
         bb = getActivity().getIntent().getExtras();
+        setHasOptionsMenu(true);
 
 //        final TextView textView = root.findViewById(R.id.text_dashboard);
 //        dashboardViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
@@ -57,15 +64,16 @@ public class DashboardFragment extends Fragment {
         String idusuario = bb.getString("usuario");
 
         if (!idusuario.isEmpty()){
-            Cursor fila = Basededatos.rawQuery("select nombre, papellido, sapellido, cedula, carrera, semestre,celular from personal where idusuario="+idusuario,null);
+            Cursor fila = Basededatos.rawQuery("select nombre, papellido, sapellido, estado, ciudad, direccion, nacimiento,celular from personal where idusuario="+idusuario,null);
             if (fila.moveToFirst()){
                 nombre.setText(fila.getString(0));
                 apellido1.setText(fila.getString(1));
                 apellido2.setText(fila.getString(2));
-                numcedula.setText(fila.getString(3));
-                carrera.setText(fila.getString(4));
-                semestre.setText(fila.getString(5));
-                numcelular.setText(fila.getString(6));
+                estado.setText(fila.getString(3));
+                ciudad.setText(fila.getString(4));
+                direcion.setText(fila.getString(5));
+                nacimiento.setText(fila.getString(6));
+                numcelular.setText(fila.getString(7));
                 Basededatos.close();
             }
             else{
@@ -78,30 +86,26 @@ public class DashboardFragment extends Fragment {
 
         }
     }
-    public void modificar(){
-        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper( getActivity(), "administrador", null, 1);
-        SQLiteDatabase Basededatos = admin.getWritableDatabase();
-        String idusuario = bb.getString("usuario");
-//        String nombre = nombre.;
-        //String descripcion = et_descipcion.getText().toString();
-        /*if (!codigo.isEmpty() && !descripcion.isEmpty() && !precio.isEmpty()){
-            ContentValues registro = new ContentValues();
-            registro.put("codigo", codigo);
-            registro.put("descripcion", descripcion);
-            registro.put("precio", precio);
 
-            int cantidad = Basededatos.update("articulos",registro,"codigo="+codigo,null);
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
+//        getActivity().getMenuInflater().inflate(R.menu.overflow,menu);
+//        return true;
+        inflater.inflate(R.menu.overflow, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem cerrar){
+        int id = cerrar.getItemId();
+        if(id==R.id.cerrar){
+            Toast.makeText(getContext(), "Cerrar sesion", Toast.LENGTH_LONG).show();
+            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper( getActivity(), "administrador", null, 1);
+            SQLiteDatabase Basededatos = admin.getWritableDatabase();
             Basededatos.close();
-            if (cantidad==1){
-                Toast.makeText(this, "Articulo modificado correctamente", Toast.LENGTH_LONG).show();
-            }
-            else{
-                Toast.makeText(this, "El articulo no existe", Toast.LENGTH_LONG).show();
-            }
-
-        }else{
-            Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_LONG).show();
-        }*/
+            Intent ii = new Intent(getActivity(), MainActivity.class);
+            startActivity(ii);
+        }
+        return super.onOptionsItemSelected(cerrar);
     }
 
 }
