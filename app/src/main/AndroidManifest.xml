@@ -9,9 +9,10 @@
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Editar"></activity>
         <activity
             android:name=".Ingreso"
-            android:label="@string/title_activity_ingreso"></activity>
+            android:label="@string/title_activity_ingreso" />
         <activity android:name=".FormatoHoja" />
         <activity android:name=".CrearCuenta" />
         <activity android:name=".MainActivity">

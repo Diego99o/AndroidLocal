@@ -22,6 +22,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.hoja.AdminSQLiteOpenHelper;
+import com.example.hoja.Editar;
 import com.example.hoja.MainActivity;
 import com.example.hoja.R;
 
@@ -91,7 +92,7 @@ public class DashboardFragment extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
 //        getActivity().getMenuInflater().inflate(R.menu.overflow,menu);
 //        return true;
-        inflater.inflate(R.menu.overflow, menu);
+        inflater.inflate(R.menu.overflow1, menu);
         super.onCreateOptionsMenu(menu, inflater);
     }
     @Override
@@ -104,6 +105,15 @@ public class DashboardFragment extends Fragment {
             Basededatos.close();
             Intent ii = new Intent(getActivity(), MainActivity.class);
             startActivity(ii);
+        }
+        else if(id==R.id.edit){
+            String idUsuario = bb.getString("usuario");
+            Bundle t = new Bundle();
+            t.putString("usuario", idUsuario);
+            Toast.makeText(getContext(), "Id usuario: "+idUsuario, Toast.LENGTH_LONG).show();
+            Intent c = new Intent(getContext(), Editar.class);
+            c.putExtras(t);
+            startActivity(c);
         }
         return super.onOptionsItemSelected(cerrar);
     }

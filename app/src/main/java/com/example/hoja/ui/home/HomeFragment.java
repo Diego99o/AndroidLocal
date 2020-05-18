@@ -5,6 +5,9 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -20,6 +23,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.hoja.AdminSQLiteOpenHelper;
 import com.example.hoja.Ingreso;
+import com.example.hoja.MainActivity;
 import com.example.hoja.R;
 
 public class HomeFragment extends Fragment {
@@ -32,6 +36,7 @@ public class HomeFragment extends Fragment {
         homeViewModel =
                 ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
+        setHasOptionsMenu(true);
 //        final TextView textView = root.findViewById(R.id.text_home);
 //        homeViewModel.getText().observe(this, new Observer<String>() {
 //            @Override
@@ -100,6 +105,26 @@ public class HomeFragment extends Fragment {
             }
         });
         return root;
+    }
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
+//        getActivity().getMenuInflater().inflate(R.menu.overflow,menu);
+//        return true;
+        inflater.inflate(R.menu.overflow, menu);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem cerrar){
+        int id = cerrar.getItemId();
+        if(id==R.id.cerrar){
+            Toast.makeText(getContext(), "Cerrar sesion", Toast.LENGTH_LONG).show();
+            AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper( getActivity(), "administrador", null, 1);
+            SQLiteDatabase Basededatos = admin.getWritableDatabase();
+            Basededatos.close();
+            Intent ii = new Intent(getActivity(), MainActivity.class);
+            startActivity(ii);
+        }
+        return super.onOptionsItemSelected(cerrar);
     }
 
 }
